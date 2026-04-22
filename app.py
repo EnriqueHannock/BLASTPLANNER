@@ -25,7 +25,6 @@ import io
 # ─────────────────────────────────────────────
 st.set_page_config(
     page_title="MUBAS Blast Designer",
-    page_icon="💥",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -636,7 +635,7 @@ with st.sidebar:
     <div style='text-align:center; padding:1rem 0 0.5rem;'>
         <div style='font-family:Rajdhani,sans-serif; font-size:1.8rem;
                     font-weight:700; color:#f5a623; letter-spacing:0.1em;'>
-            💥 BLAST<br>DESIGNER
+            BLAST<br>DESIGNER
         </div>
         <div style='font-family:Share Tech Mono,monospace; font-size:0.7rem;
                     color:#555f78; margin-top:0.3rem; letter-spacing:0.12em;'>
@@ -721,7 +720,7 @@ st.markdown("""
 <div class="hero-banner">
     <div style="display:flex; align-items:flex-start; gap:1.5rem; flex-wrap:wrap;">
         <div style="flex:1; min-width:260px;">
-            <p class="hero-title">💥 BLAST DESIGNER</p>
+            <p class="hero-title">BLAST DESIGNER</p>
             <p class="hero-subtitle">
                 Production Blast Planning &amp; Fragmentation Analysis System
             </p>
@@ -777,7 +776,7 @@ with st.form("blast_form", clear_on_submit=False):
 
     # ── Column 2: Explosive ──
     with col2:
-        st.markdown('<div class="input-group-label">💣 Explosive Parameters</div>',
+        st.markdown('<div class="input-group-label">Explosive Parameters</div>',
                     unsafe_allow_html=True)
         rho_anfo = st.number_input(
             "ANFO Density (kg/m³)", min_value=400.0, max_value=1500.0,
@@ -788,37 +787,12 @@ with st.form("blast_form", clear_on_submit=False):
             value=1.0, step=0.1, help="Desired explosive energy per unit volume"
         )
 
-        st.markdown('<div class="input-group-label" style="margin-top:0.8rem;">📏 Subdrill</div>',
-                    unsafe_allow_html=True)
-        use_subdrill = st.checkbox("Enable Subdrill", value=False,
-                                   help="Extra drilling below bench floor level")
-        subdrill_val = 0.0
-        if use_subdrill:
-            subdrill_val = st.number_input(
-                "Subdrill Depth (m)", min_value=0.0, max_value=5.0,
-                value=0.5, step=0.1
-            )
-
-    # ── Column 3: Deck Charging ──
-    with col3:
-        st.markdown('<div class="input-group-label">🎯 Deck Charging</div>',
-                    unsafe_allow_html=True)
-        use_decking = st.checkbox("Enable 2-Deck Charging", value=False,
-                                  help="Split charge column with mid-deck stemming")
-        deck_stemming = 0.0
-        if use_decking:
-            deck_stemming = st.number_input(
-                "Mid-Deck Stemming Length (m)",
-                min_value=0.5, max_value=5.0, value=1.5, step=0.1,
-                help="Inert material separating upper and lower decks"
-            )
-
         st.markdown("&nbsp;", unsafe_allow_html=True)
         st.markdown("&nbsp;", unsafe_allow_html=True)
         st.markdown("&nbsp;", unsafe_allow_html=True)
 
         submitted = st.form_submit_button(
-            "⚡ RUN CALCULATION",
+            "RUN CALCULATION",
             use_container_width=True,
             type="primary",
         )
@@ -858,11 +832,11 @@ if submitted:
     """, unsafe_allow_html=True)
 
     m1, m2, m3, m4, m5, m6 = st.columns(6, gap="small")
-    m1.metric("⛳ Burden", f"{burden:.2f} m")
+    m1.metric("Burden", f"{burden:.2f} m")
     m2.metric("📏 Spacing", f"{spacing:.2f} m")
-    m3.metric("🔩 Stemming", f"{primary_stem:.2f} m")
-    m4.metric("🕳 Total Depth", f"{total_depth:.2f} m")
-    m5.metric("💣 Charge Weight", f"{charge_weight:.1f} kg")
+    m3.metric("Stemming", f"{primary_stem:.2f} m")
+    m4.metric("Total Depth", f"{total_depth:.2f} m")
+    m5.metric("Charge Weight", f"{charge_weight:.1f} kg")
     m6.metric("📊 Actual PF", f"{actual_pf:.3f} kg/m³",
               delta=f"{actual_pf - pf_target:+.3f} vs target")
 
@@ -1058,7 +1032,7 @@ else:
                 color:#3a4458; border:1px dashed #2a3045;
                 border-radius:10px;'>
         No calculations yet. Enter parameters above and click
-        <span style='color:#f5a623;'>⚡ RUN CALCULATION</span>.
+        <span style='color:#f5a623;'>RUN CALCULATION</span>.
     </div>
     """, unsafe_allow_html=True)
 
