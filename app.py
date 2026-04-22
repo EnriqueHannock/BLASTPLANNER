@@ -655,7 +655,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
     nav_items = [
-        ("📐", "Design Inputs"),
+        ("Design Inputs"),
         ("🧮", "Results & Metrics"),
         ("📈", "Fragmentation"),
         ("🕐", "History"),
@@ -727,7 +727,7 @@ st.markdown("""
             <div style="margin-top:0.7rem;">
                 <span class="hero-badge">⚙ MUBAS</span>
                 <span class="hero-badge">📐 BMEN 5</span>
-                <span class="hero-badge">🪨 GROUP 4</span>
+                <span class="hero-badge">GROUP 4</span>
                 <span class="hero-badge">v2.0</span>
             </div>
         </div>
@@ -904,7 +904,7 @@ if submitted:
     with diag_col:
         st.markdown("""
         <div class="section-header">
-            <span>🎨</span> HOLE CROSS-SECTION
+            <span/span> HOLE CROSS-SECTION
         </div>
         """, unsafe_allow_html=True)
         fig_diag = draw_blast_diagram(
